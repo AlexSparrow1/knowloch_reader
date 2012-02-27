@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Knowloch Reader | <%= @title %></title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+  		<title><%= title %></title>
+  		<%= stylesheet_link_tag 'blueprint/screen', :media => "screen, projection" %>
+		<%= stylesheet_link_tag 'blueprint/print', :media => "print" %>
+		<!--[if lt IE8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif] -->
+		<%= stylesheet_link_tag    "application" %>
+  		<%= javascript_include_tag "application" %>
+  		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div class="container">
+			<%= render "layouts/header" %>
+			<section class="round">
+				<%= yield %>
+			</section>
+		</div>
+	</body>
 </html>
