@@ -7,12 +7,6 @@ gem 'rails', '3.1.0'
 
 gem 'sqlite3'
 
-group :test do
-  gem "rspec-rails"
-  gem "autotest"
-  gem "autotest-rails"
-end
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -32,7 +26,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
+group :development, :test do
   # Pretty printed test output
-  gem 'turn', :require => false
+  gem 'rspec-rails'
+  gem 'autotest'
+  gem 'autotest-rails'
+  gem 'spork'
 end
