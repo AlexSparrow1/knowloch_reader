@@ -32,4 +32,5 @@ group :development, :test do
   gem 'autotest'
   gem 'autotest-rails'
   gem 'spork'
+  gem 'factory_girl_rails'
 end
