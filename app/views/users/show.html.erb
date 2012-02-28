@@ -1,3 +1,4 @@
+<h1>Profile</h1>
 <table class="profile" summary="Profile Information">
 	<tr>
 		<td class="main">
@@ -11,3 +12,13 @@
 		</td>
 	</tr>
 </table>
+
+<div id="editing">
+<%= render :partial => 'editform', :remote => true %>
+</div>
+<script type="text/javascript">
+$("#editing").hide(25);
+$("#editlink > a").click(function(){
+	$("#editing").show(400);
+});
+</script>
