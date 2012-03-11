@@ -7,18 +7,55 @@
 			</h1>
 		</td>
 		<td class="sidebar round">
-			<strong>Name</strong><%= @user.name %><br />
-			<strong>URL</strong><%= link_to user_path(@user), @user %>
+			<strong>Name: </strong><%= @user.name %><br />
+			<strong>URL: </strong><%= link_to user_path(@user), @user %><br />
+			<strong>Articles: </strong><%= @user.citations.count %><br />
+			<button id="editlink"><%= link_to "Edit Settings", edit_user_path(current_user), :remote => true %></button>
 		</td>
 	</tr>
 </table>
 
-<div id="editing">
-<%= render :partial => 'editform', :remote => true %>
+<button id="addcit">Add Article</button>
+<button id="display">Display Library</button>
+
+<div id="showcit">
+	<table>
+		<tr>
+    		<th>Author</th>
+    		<th>Year</th>
+    		<th>Title</th>
+    		<th>Volume</th>
+    		<th>Pages</th>
+    		<th>Abstract</th>
+			<th>Actions</th>
+        </tr>
+		<tr id="citdata">
+  			<%= render :partial => 'shared/citation' %>
+		</tr>
+	</table>
 </div>
+
+<div id="newcit">
+	<%= render :partial => 'citations/form' %>
+</div>
+
+<div id="edituser">
+	<%= render :partial => 'editform', :remote => true %>
+</div>
+
 <script type="text/javascript">
-$("#editing").hide(25);
-$("#editlink > a").click(function(){
-	$("#editing").show(400);
+$("#showcit").show(25);
+$("#edituser").hide(25);
+$("#editlink").click(function(){
+	$("#edituser").toggle(400);
+	$("#newcit").hide(400);
+	$("#showcit").hide(400);
+});
+$("#addcit").click(function(){
+	$("#newcit").toggle(400);
+	$("#edituser").hide(400);
+});
+$("#display").click(function(){
+	$("#showcit").toggle(400);
 });
 </script>

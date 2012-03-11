@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120228233010) do
+ActiveRecord::Schema.define(:version => 20120311200508) do
+
+  create_table "citations", :force => true do |t|
+    t.string   "author"
+    t.string   "year"
+    t.string   "title"
+    t.string   "journal"
+    t.integer  "volume"
+    t.string   "pages"
+    t.string   "abstract"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

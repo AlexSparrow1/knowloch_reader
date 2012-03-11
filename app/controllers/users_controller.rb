@@ -12,6 +12,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @title = @user.name
+    @citations = @user.citations.all
+    @citation = Citation.new
   end
   
   def new
