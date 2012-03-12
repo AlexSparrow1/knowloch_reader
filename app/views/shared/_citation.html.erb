@@ -10,7 +10,7 @@
     <td><%= citation.pages %></td>
     <td><%= citation.abstract %></td>
     <td><%= link_to 'Show', citation %></td>
-    <td><%= link_to 'Edit', edit_citation_path(citation) %></td>
+    <td id="editcitlink"><%= link_to 'Edit', edit_citation_path(citation) %></td>
     <td id="deletecit"><%= link_to 'Delete', citation, confirm: 'Are you sure?', method: :delete, :remote => true %></td>
   </tr>
 <% end %>

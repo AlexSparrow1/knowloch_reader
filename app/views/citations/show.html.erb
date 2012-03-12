@@ -30,6 +30,16 @@
   <%= @citation.abstract %>
 </p>
 
+<button id="editbutton">Edit</button>
+<%= link_to 'Back', user_path(@citation.user) %>
 
-<%= link_to 'Edit', edit_citation_path(@citation) %> |
-<%= link_to 'Back', citations_path %>
+<div id="editcit">
+<%= render :partial => 'form' %>
+</div>
+
+<script text="text/javascript">
+$('#editcit').hide(25);
+$('#editbutton').click(function() {
+	$('#editcit').toggle(400);
+});
+</script>

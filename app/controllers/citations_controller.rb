@@ -59,6 +59,7 @@ class CitationsController < ApplicationController
     respond_to do |format|
       if @citation.update_attributes(params[:citation])
         format.html { redirect_to @citation, notice: 'Citation was successfully updated.' }
+        format.js   { render 'edit.js.erb' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
