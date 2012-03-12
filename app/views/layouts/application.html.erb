@@ -2,10 +2,12 @@
 <html>
 	<head>
   		<title><%= title %></title>
-		<%= csrf_meta_tags %>
-		<%= render 'layouts/stylesheets' %>
 		<%= stylesheet_link_tag "application" %>
   		<%= javascript_include_tag "application" %>
+
+		<%= render "layouts/stylesheets" %>
+		<%= csrf_meta_tags %>
+
 	</head>
 	<body>
 		<div class="container">

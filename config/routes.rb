@@ -8,7 +8,7 @@ KnowlochReader::Application.routes.draw do
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   
-  match '/help', :to => 'pages#help'
+  match "/help", :to => "pages#help"
   
   root :to => 'pages#home'
 
