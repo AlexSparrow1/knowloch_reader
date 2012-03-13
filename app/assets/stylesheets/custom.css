@@ -3,27 +3,37 @@
 }
 
 body {
-  background: #cff;
+  background: #E6E3E4;
 }
 
 header {
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 header img {
   padding: 1em;
   background: #fff;
+  margin-bottom: 1em;
 }
 
 section {
   margin-top: 1em;
-  font-size: 120%;
+  font-size: 100%;
   padding: 20px;
   background: #fff;
 }
 
 section h1 {
   font-size: 200%;
+}
+
+section h2 {
+  font-size: 150%;
+}
+
+section h3 {
+  font-size: 110%;
 }
 
 /* Links */
@@ -42,13 +52,14 @@ a:visited {
   color: #069;
 }
 
+a.modeltype {
+  color: #2A2940;
+}
+
 /* Navigation */
 
 nav {
   float: right;
-}
-
-nav {
   background-color: white;
   padding: 0 0.7em;
   white-space: nowrap;
@@ -78,35 +89,43 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Sign up button */
-
-a.signup_button {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  text-align: center;
-  width: 190px;
-  color: #fff;
-  background: #006400;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 20px;
+.round {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 
-/* Round corners */
-
-.round {
-  -moz-border-radius:    10px;
+.roundforms {
+  -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  border-radius:         10px;
+  border-radius: 10px;
+  background: #88DFFC;
+}
+
+.roundborder {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border-style:solid;
+  border-width:2px;
+  border-color:gray;
+}
+
+table.xfeed {
+  border-style:solid;
+  border-width:5px;
+  border-color:orange;
 }
 
 footer {
   text-align: center;
   margin-top: 10px;
-  width: 710px;
+  width: 610px;
   margin-left: auto;
   margin-right: auto;
+  border-style:solid;
+  border-width:2px;
+  border-color:gray;
 }
 
 footer nav {
@@ -121,8 +140,14 @@ table.profile {
 }
 
 td.main {
-  width: 70%;
+  vertical-align: top;
+  text-align: center;
+  width: 20%;
   padding: 1em;
+}
+
+th.main {
+  text-align: center;
 }
 
 td.sidebar {
@@ -180,6 +205,13 @@ div.field, div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+form.new_citation textarea {
+height: 2em;
+width: 13em;
+margin-bottom: 2;
+margin-top: 0;
 }
 
 ul.users {
