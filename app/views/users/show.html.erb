@@ -1,22 +1,21 @@
-<h1>Profile</h1>
+<h1>Library</h1>
 <table class="profile" summary="Profile Information">
 	<tr>
 		<td class="main">
 			<h1>
 				<%= @user.name %>
 			</h1>
-		</td>
-		<td class="sidebar round">
-			<strong>Name: </strong><%= @user.name %><br />
-			<strong>URL: </strong><%= link_to user_path(@user), @user %><br />
-			<strong>Articles: </strong><%= @user.citations.count %><br />
-			<button id="editlink"><%= link_to "Edit Settings", edit_user_path(current_user), :remote => true %></button>
+			<strong>Articles: </strong><%= @user.citations.count %><br />		
 		</td>
 	</tr>
 </table>
 
 <button id="addcit">Add Article</button>
-<button id="display">Display Library</button>
+<button id="editlink"><%= link_to "Edit Settings", edit_user_path(current_user), :remote => true %></button>
+
+<div id="edituser">
+	<%= render :partial => 'editform', :remote => true %>
+</div>
 
 <div id="showcit">
 	<table>
@@ -40,17 +39,13 @@
 	<%= render :partial => 'citations/form' %>
 </div>
 
-<div id="edituser">
-	<%= render :partial => 'editform', :remote => true %>
-</div>
-
 <script type="text/javascript">
-$("#showcit").show(25);
-$("#edituser").hide(25);
+$("#showcit").show(10);
+$("#edituser").hide(10);
+$("#newcit").hide(10);
 $("#editlink").click(function(){
 	$("#edituser").toggle(400);
 	$("#newcit").hide(400);
-	$("#showcit").hide(400);
 });
 $("#addcit").click(function(){
 	$("#newcit").toggle(400);

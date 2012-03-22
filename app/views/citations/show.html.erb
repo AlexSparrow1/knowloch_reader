@@ -24,9 +24,9 @@
   <%= @citation.abstract %>
 </p>
 
-<div id="pdfview" onload="load() %>');">
+<div id="pdfview">
   <% if @citation.pdf.exists? then %>
-	<% @citation.pdf %>
+	<%= @citation.pdf.url %>
   <% else %>
 	<%= "No File Attached" %>
   <% end %>
@@ -60,5 +60,12 @@ $('#editbutton').click(function() {
 });
 $('#showpdf').click(function(){
 	$('#pdfview').toggle(400);
+});
+</script>
+<script text="text/javascript">
+PDFJS.embed("pdfview", "/pdf/:class/:attachment/:id/:basename.:extension", {
+	selection: true,
+	search: false,
+	annotations: true;
 });
 </script>
