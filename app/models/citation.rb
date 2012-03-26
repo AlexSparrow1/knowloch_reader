@@ -1,5 +1,5 @@
 class Citation < ActiveRecord::Base
-  attr_accessible :author, :year, :title, :journal, :volume, :pages, :abstract  
+  attr_accessible :author, :year, :title, :journal, :volume, :pages, :abstract, :pdf
   has_attached_file :pdf,
                     :url => "/system/:attachment/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
