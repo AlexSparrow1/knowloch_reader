@@ -340,11 +340,9 @@ canvas {
 /* === Printed media overrides === */
 @media print {
   #sidebar {
-    display: none;
   }
 
   #controls {
-    display: none;
   }
 
   #viewer {
